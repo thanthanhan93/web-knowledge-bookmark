@@ -1,38 +1,72 @@
-# Web Knowledge Bookmark
+# An's Bookmark Vault — Kho Tri Thức & Bookmark Cá Nhân
 
-Một công cụ hỗ trợ lưu trữ và tổ chức tài liệu online (knowledge vault), sử dụng markdown làm source of truth, tự động generate index và hiển thị trên Web UI (GitHub Pages).
+> Một công cụ lưu trữ, tổ chức tài liệu và bookmark thông minh cá nhân (Personal Smart Knowledge Vault). Sử dụng Markdown làm source of truth, tự động tạo JSON index và hiển thị trực quan qua Web UI trên GitHub Pages.
 
-## Tính năng
-- Lưu URL, tóm tắt tự động, gắn thẻ phân cấp (category/topic)
-- Search và filter thông minh qua Web UI tĩnh
-- Sync dữ liệu thông qua Git và xem trên GitHub Pages
-- Tích hợp Antigravity skill để nhập liệu nhanh từ terminal/chat
+🌐 **Website Trực Tuyến**: [https://thanthanhan93.github.io/web-knowledge-bookmark/](https://thanthanhan93.github.io/web-knowledge-bookmark/)
 
-## Quick Start
+---
 
-### Cách 1: Dùng lệnh chuẩn `npx skills` (Khuyến nghị)
-`npx skills` tự động phát hiện Antigravity agent và cài đặt skill vào workspace:
+## Tính năng nổi bật
+- **Quản lý đa nền tảng**: Tương thích và hoạt động mượt mà trên nhiều AI Agent CLI (**Claude Code**, **Antigravity CLI**, **OpenCode**, **Cursor**, **Codex**...).
+- **Tổ chức thẻ phân cấp thông minh**: Giới hạn tối đa 2 cấp (`category/topic`), dễ dàng lọc và mở rộng.
+- **Web UI Dark Glassmorphism**: Tìm kiếm full-text tức thì, lọc đa chiều theo nguồn/chủ đề, xem chi tiết và biểu đồ Vault Analytics.
+- **Zero-Backend**: Chạy hoàn toàn dưới dạng static site trên GitHub Pages (fetch trực tiếp file index JSON).
+- **Markdown làm Source of Truth**: Mọi dữ liệu đều là file `.md` kèm frontmatter YAML chuẩn hóa, lưu trữ độc lập và dễ đọc bằng bất kỳ trình soạn thảo nào.
+
+---
+
+## Cài đặt nhanh (Quick Start)
+
+### Cách 1: Sử dụng lệnh chuẩn `npx skills` (Khuyến nghị)
+Bộ công cụ `npx skills` sẽ tự động nhận diện tất cả các AI CLI bạn đang sử dụng trên máy (**Claude Code**, **Antigravity**, **OpenCode**, **Cursor**...) và cài đặt skill vào đúng vị trí:
 
 ```bash
-# Nếu cài đặt từ GitHub:
+# Cài đặt trực tiếp từ GitHub repository:
 npx skills add thanthanhan93/web-knowledge-bookmark -y
 
-# Hoặc cài đặt trực tiếp từ thư mục local trong workspace:
+# Hoặc cài đặt từ thư mục local trong workspace:
 npx skills add ./projects/web-knowledge-bookmark -y --copy
 ```
 
-### Cách 2: Setup thủ công
-```bash
-# 1. Clone repo
-git clone git@github.com:thanthanhan93/web-knowledge-bookmark.git
-cd web-knowledge-bookmark
+### Cách 2: Cài đặt thủ công theo từng CLI
+Nếu muốn cài đặt thủ công vào agent cụ thể:
 
-# 2. Copy skill vào workspace
-cp -r skill/ <workspace>/.agents/skills/knowledge-vault/
-```
+- **Claude Code**:
+  ```bash
+  # Project level:
+  cp -r skill/ .claude/skills/knowledge-vault/
+  # Hoặc User global level:
+  cp -r skill/ ~/.claude/skills/knowledge-vault/
+  ```
 
-## Usage
-- **Thêm entry**: Paste URL trong Antigravity chat
-- **Xem Web UI**: Truy cập `https://thanthanhan93.github.io/web-knowledge-bookmark/`
-- **Sync**: `git pull` trước khi thêm, `git push` sau khi thêm
-- **Rebuild index**: `node skill/scripts/rebuild-index.js`
+- **Antigravity CLI**:
+  ```bash
+  cp -r skill/ .agents/skills/knowledge-vault/
+  ```
+
+- **OpenCode**:
+  ```bash
+  cp -r skill/ .opencode/skills/knowledge-vault/
+  ```
+
+---
+
+## Hướng dẫn sử dụng với AI CLI
+
+1. **Thêm bookmark mới**:
+   Chỉ cần dán link vào cửa sổ chat với AI agent bất kỳ:
+   > *"Lưu link https://... vào knowledge base"*
+
+   Agent sẽ tự động fetch nội dung, tóm tắt ý chính, gợi ý tags phân loại 2 cấp, tạo file Markdown trong `entries/` và tự động rebuild index.
+
+2. **Xem và tra cứu trên Web**:
+   Truy cập [https://thanthanhan93.github.io/web-knowledge-bookmark/](https://thanthanhan93.github.io/web-knowledge-bookmark/) trên điện thoại, máy tính bảng hoặc máy tính.
+
+3. **Rebuild index thủ công (nếu cần)**:
+   ```bash
+   node skill/scripts/rebuild-index.js
+   ```
+
+4. **Đồng bộ giữa các thiết bị**:
+   - `git pull` trước khi thêm nội dung mới.
+   - `git push` sau khi thêm để GitHub Pages tự động cập nhật.

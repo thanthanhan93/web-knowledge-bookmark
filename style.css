@@ -143,6 +143,12 @@ body {
   height: 22px;
 }
 
+.brand-text {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
 .brand-title {
   font-family: var(--font-display);
   font-weight: 700;
@@ -151,6 +157,14 @@ body {
   background: linear-gradient(to right, #ffffff, #cbd5e1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.brand-tagline {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 8px;
 }
 
 .brand-badge {
@@ -163,7 +177,7 @@ body {
   background: rgba(16, 185, 129, 0.15);
   color: var(--accent-emerald);
   border: 1px solid rgba(16, 185, 129, 0.3);
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
 /* Search Bar */
