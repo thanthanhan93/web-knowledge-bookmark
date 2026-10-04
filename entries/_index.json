@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "generated_at": "2026-10-04T19:24:22.135Z",
+  "entries": [
+    {
+      "id": "2026-10-04-why-capable-agents-still-fail",
+      "url": "https://walkinglabs.github.io/learn-harness-engineering/en/lectures/lecture-01-why-capable-agents-still-fail/",
+      "title": "Why Capable Agents Still Fail",
+      "summary": "Bài lecture giải thích tại sao model AI mạnh vẫn thất bại trong thực tế — vấn đề cốt lõi nằm ở harness engineering chứ không phải model. Giới thiệu 5 lớp phòng vệ (defense layers) và diagnostic feedback loop.",
+      "tags": [
+        "engineering/ai-agent",
+        "engineering/harness-engineering",
+        "platform/anthropic"
+      ],
+      "source_type": "course",
+      "language": "en",
+      "saved_at": "2026-10-04",
+      "notes": "Rất quan trọng cho việc cấu hình AGENTS.md và agent autonomy. Cần xem tiếp lecture 02-14.",
+      "file": "entries/2026-10-04-why-capable-agents-still-fail.md",
+      "body": "## Key Takeaways\n- Khi AI agent thất bại, 80% nguyên nhân là do harness: context window pollution, ambiguous tools, thiếu guardrails.\n- 5 Lớp phòng vệ gồm: Prompt contract, Context compression, Tool schema validation, Execution sandbox, và Runtime reflection.\n- Cần xây dựng feedback loop liên tục thay vì chỉ đo benchmark một lần."
+    },
+    {
+      "id": "2026-10-04-building-effective-agents-anthropic",
+      "url": "https://www.anthropic.com/research/building-effective-agents",
+      "title": "Building Effective Agents - Anthropic Research",
+      "summary": "Hướng dẫn thực chiến từ Anthropic về kiến trúc xây dựng AI agents. Phân loại agent patterns phổ biến: Prompt Chaining, Routing, Parallelization, Orchestrator-Workers, và Evaluator-Optimizer.",
+      "tags": [
+        "engineering/ai-agent",
+        "concept/architecture",
+        "platform/anthropic"
+      ],
+      "source_type": "blog",
+      "language": "en",
+      "saved_at": "2026-10-04",
+      "notes": "Tài liệu nền tảng khi thiết kế multi-agent workflow và subagent delegation.",
+      "file": "entries/2026-10-04-building-effective-agents-anthropic.md",
+      "body": "## Patterns Tổng Kết\n1. **Prompt Chaining**: Chia nhỏ chuỗi nhiệm vụ thành các bước tuần tự.\n2. **Routing**: Phân loại input và điều hướng sang prompt/tool chuyên biệt.\n3. **Parallelization**: Chạy đồng thời các tác vụ độc lập rồi tổng hợp kết quả.\n4. **Orchestrator-Workers**: LLM trung tâm điều phối và tổng hợp kết quả từ các worker subagents.\n5. **Evaluator-Optimizer**: Vòng lặp tự đánh giá và tinh chỉnh output dựa trên tiêu chí định sẵn."
+    }
+  ],
+  "tag_tree": {
+    "engineering": {
+      "children": [
+        "harness-engineering",
+        "ai-agent",
+        "prompt-engineering",
+        "devops"
+      ],
+      "description": "Software engineering topics"
+    },
+    "platform": {
+      "children": [
+        "anthropic",
+        "openai",
+        "google",
+        "github"
+      ],
+      "description": "AI platforms & services"
+    },
+    "ops": {
+      "children": [
+        "deployment",
+        "monitoring",
+        "ci-cd"
+      ],
+      "description": "Operations & infrastructure"
+    },
+    "concept": {
+      "children": [
+        "architecture",
+        "design-pattern",
+        "mental-model"
+      ],
+      "description": "Concepts & frameworks"
+    }
+  }
+}

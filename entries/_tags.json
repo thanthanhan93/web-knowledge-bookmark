@@ -1,0 +1,18 @@
+{
+  "engineering": {
+    "children": ["harness-engineering", "ai-agent", "prompt-engineering", "devops"],
+    "description": "Software engineering topics"
+  },
+  "platform": {
+    "children": ["anthropic", "openai", "google", "github"],
+    "description": "AI platforms & services"
+  },
+  "ops": {
+    "children": ["deployment", "monitoring", "ci-cd"],
+    "description": "Operations & infrastructure"
+  },
+  "concept": {
+    "children": ["architecture", "design-pattern", "mental-model"],
+    "description": "Concepts & frameworks"
+  }
+}
