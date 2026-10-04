@@ -9,24 +9,26 @@ Một công cụ hỗ trợ lưu trữ và tổ chức tài liệu online (knowl
 - Tích hợp Antigravity skill để nhập liệu nhanh từ terminal/chat
 
 ## Quick Start
+
+### Cách 1: Dùng lệnh chuẩn `npx skills` (Khuyến nghị)
+`npx skills` tự động phát hiện Antigravity agent và cài đặt skill vào workspace:
+
+```bash
+# Nếu cài đặt từ GitHub:
+npx skills add <username>/web-knowledge-bookmark -y
+
+# Hoặc cài đặt trực tiếp từ thư mục local trong workspace:
+npx skills add ./projects/web-knowledge-bookmark -y --copy
+```
+
+### Cách 2: Setup thủ công
 ```bash
 # 1. Clone repo
 git clone git@github.com:<user>/web-knowledge-bookmark.git
 cd web-knowledge-bookmark
 
-# 2. Install skill vào Antigravity workspace
-#    Option A: Symlink (khuyến nghị — luôn sync với repo)
-#    Windows (nhớ mở PowerShell với quyền admin):
-mklink /D "<workspace>\.agents\skills\knowledge-vault" "%cd%\skill"
-
-#    macOS/Linux:
-ln -s "$(pwd)/skill" "<workspace>/.agents/skills/knowledge-vault"
-
-#    Option B: Copy (không tự động sync)
+# 2. Copy skill vào workspace
 cp -r skill/ <workspace>/.agents/skills/knowledge-vault/
-
-# 3. Xong! Dùng skill trong Antigravity chat:
-#    "lưu link https://... vào knowledge base"
 ```
 
 ## Usage
