@@ -49,6 +49,7 @@
     modalSavedDate: document.getElementById('modalSavedDate'),
     modalTitle: document.getElementById('modalTitle'),
     modalUrlLink: document.getElementById('modalUrlLink'),
+    modalSummarySection: document.getElementById('modalSummarySection'),
     modalSummary: document.getElementById('modalSummary'),
     modalNotesSection: document.getElementById('modalNotesSection'),
     modalNotes: document.getElementById('modalNotes'),
@@ -543,7 +544,10 @@
         return `<span class="tag-badge" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</span>`;
       }).join('');
 
-      // Notes snippet HTML
+      // Summary & Notes
+      const summaryHtml = entry.summary 
+        ? `<p class="entry-summary">${escapeHtml(entry.summary)}</p>` 
+        : '';
       const notesHtml = entry.notes 
         ? `<div class="entry-notes-snippet">"${escapeHtml(entry.notes)}"</div>` 
         : '';
@@ -573,7 +577,7 @@
 
         <div class="entry-body-col">
           <h3 class="entry-title">${escapeHtml(entry.title || 'Untitled')}</h3>
-          <p class="entry-summary">${escapeHtml(entry.summary || '')}</p>
+          ${summaryHtml}
           ${notesHtml}
         </div>
 
@@ -630,9 +634,15 @@
     elements.modalUrlLink.textContent = entry.url || '';
     elements.modalUrlLink.href = entry.url || '#';
     elements.modalVisitSiteBtn.href = entry.url || '#';
-    elements.modalSummary.textContent = entry.summary || 'No summary provided.';
+    // Summary
+    if (entry.summary) {
+      elements.modalSummarySection.classList.remove('hidden');
+      elements.modalSummary.textContent = entry.summary;
+    } else {
+      elements.modalSummarySection.classList.add('hidden');
+    }
 
-    // Notes
+    // Context & Notes
     if (entry.notes) {
       elements.modalNotesSection.classList.remove('hidden');
       elements.modalNotes.textContent = entry.notes;

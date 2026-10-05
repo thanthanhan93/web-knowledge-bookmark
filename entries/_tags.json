@@ -8,7 +8,7 @@
     "description": "AI platforms & services"
   },
   "ops": {
-    "children": ["deployment", "monitoring", "ci-cd"],
+    "children": ["deployment", "monitoring", "ci-cd", "kubernetes"],
     "description": "Operations & infrastructure"
   },
   "concept": {

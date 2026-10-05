@@ -825,6 +825,16 @@ body {
   color: #a5b4fc;
 }
 
+.entry-context-note {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .entry-summary {
   font-size: 0.87rem;
   color: var(--text-muted);

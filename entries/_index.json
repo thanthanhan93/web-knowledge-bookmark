@@ -1,40 +1,53 @@
 {
   "version": 1,
-  "generated_at": "2026-10-04T19:24:22.135Z",
+  "generated_at": "2026-10-05T05:49:46.902Z",
   "entries": [
     {
-      "id": "2026-10-04-why-capable-agents-still-fail",
-      "url": "https://walkinglabs.github.io/learn-harness-engineering/en/lectures/lecture-01-why-capable-agents-still-fail/",
-      "title": "Why Capable Agents Still Fail",
-      "summary": "Bài lecture giải thích tại sao model AI mạnh vẫn thất bại trong thực tế — vấn đề cốt lõi nằm ở harness engineering chứ không phải model. Giới thiệu 5 lớp phòng vệ (defense layers) và diagnostic feedback loop.",
+      "id": "2026-10-05-hanh-trinh-tro-thanh-kubestronaut-sre",
+      "url": "https://devops.vn/posts/hanh-trinh-tro-thanh-kubestronaut-qua-goc-nhin-cua-mot-sre/",
+      "title": "Hành trình trở thành Kubestronaut qua góc nhìn của một SRE",
+      "summary": "Chia sẻ lộ trình và kinh nghiệm thực chiến chinh phục 5 chứng chỉ Kubernetes CNCF (CKA, CKS, CKAD, KCNA, KCSA) từ một kỹ sư SRE tại Zalopay. Bài viết phân tích chi tiết độ khó mock exam, cạm bẫy phòng thi và sự khác biệt giữa thi cử với vận hành K8S on-premise production.",
+      "tags": [
+        "engineering/devops",
+        "ops/kubernetes"
+      ],
+      "source_type": "blog",
+      "language": "vi",
+      "saved_at": "2026-10-05",
+      "notes": "Tài liệu hữu ích cho việc chuẩn bị chứng chỉ CNCF và hiểu rõ khoảng cách giữa kịch bản thi (static pods, kubeadm) và môi trường production on-premise HA (systemd services).",
+      "file": "entries/2026-10-05-hanh-trinh-tro-thanh-kubestronaut-sre.md"
+    },
+    {
+      "id": "2026-10-05-l8-principal-agentic-engineering-workflow-kun-chen",
+      "url": "https://www.youtube.com/watch?v=iQyg-KypKAA&t=963s",
+      "title": "L8 Principal's Agentic Engineering Workflow - Kun Chen",
+      "summary": "Kun Chen (cựu L8 Principal Engineer tại Meta & Microsoft) phân tích chi tiết quy trình Agentic Engineering: chuyển từ vai trò 'thủy thủ' (tự gõ prompt/code) sang 'thuyền trưởng' (chỉ huy hạm đội AI agents). Giới thiệu mô hình First Mate, quy trình kiểm soát chất lượng No Mistakes Pipeline và môi trường terminal tối ưu.",
+      "tags": [
+        "engineering/ai-agent",
+        "concept/mental-model",
+        "engineering/harness-engineering"
+      ],
+      "source_type": "video",
+      "language": "en",
+      "saved_at": "2026-10-05",
+      "notes": "Tư liệu nền tảng về bước chuyển dịch vai trò kỹ sư phần mềm khi làm việc với AI agents ở quy mô lớn, từ micro-prompting sang agent fleet orchestration.",
+      "file": "entries/2026-10-05-l8-principal-agentic-engineering-workflow-kun-chen.md"
+    },
+    {
+      "id": "2026-10-05-learn-harness-engineering-course",
+      "url": "https://walkinglabs.github.io/learn-harness-engineering/en/",
+      "title": "Learn Harness Engineering - A Course on AI Coding Agent Harnesses",
+      "summary": "Khóa học mã nguồn mở toàn diện về Harness Engineering cho AI coding agents (Codex, Claude Code). Cung cấp 14 bài giảng lý thuyết, 8 dự án thực hành và thư viện template chuẩn (AGENTS.md, feature lists, progress trackers) giúp xây dựng hệ thống khép kín, kiểm soát trạng thái và ngăn ngừa lỗi agent.",
       "tags": [
         "engineering/ai-agent",
         "engineering/harness-engineering",
-        "platform/anthropic"
+        "concept/architecture"
       ],
       "source_type": "course",
       "language": "en",
-      "saved_at": "2026-10-04",
-      "notes": "Rất quan trọng cho việc cấu hình AGENTS.md và agent autonomy. Cần xem tiếp lecture 02-14.",
-      "file": "entries/2026-10-04-why-capable-agents-still-fail.md",
-      "body": "## Key Takeaways\n- Khi AI agent thất bại, 80% nguyên nhân là do harness: context window pollution, ambiguous tools, thiếu guardrails.\n- 5 Lớp phòng vệ gồm: Prompt contract, Context compression, Tool schema validation, Execution sandbox, và Runtime reflection.\n- Cần xây dựng feedback loop liên tục thay vì chỉ đo benchmark một lần."
-    },
-    {
-      "id": "2026-10-04-building-effective-agents-anthropic",
-      "url": "https://www.anthropic.com/research/building-effective-agents",
-      "title": "Building Effective Agents - Anthropic Research",
-      "summary": "Hướng dẫn thực chiến từ Anthropic về kiến trúc xây dựng AI agents. Phân loại agent patterns phổ biến: Prompt Chaining, Routing, Parallelization, Orchestrator-Workers, và Evaluator-Optimizer.",
-      "tags": [
-        "engineering/ai-agent",
-        "concept/architecture",
-        "platform/anthropic"
-      ],
-      "source_type": "blog",
-      "language": "en",
-      "saved_at": "2026-10-04",
-      "notes": "Tài liệu nền tảng khi thiết kế multi-agent workflow và subagent delegation.",
-      "file": "entries/2026-10-04-building-effective-agents-anthropic.md",
-      "body": "## Patterns Tổng Kết\n1. **Prompt Chaining**: Chia nhỏ chuỗi nhiệm vụ thành các bước tuần tự.\n2. **Routing**: Phân loại input và điều hướng sang prompt/tool chuyên biệt.\n3. **Parallelization**: Chạy đồng thời các tác vụ độc lập rồi tổng hợp kết quả.\n4. **Orchestrator-Workers**: LLM trung tâm điều phối và tổng hợp kết quả từ các worker subagents.\n5. **Evaluator-Optimizer**: Vòng lặp tự đánh giá và tinh chỉnh output dựa trên tiêu chí định sẵn."
+      "saved_at": "2026-10-05",
+      "notes": "Khóa học tổng hợp các best practices từ OpenAI và Anthropic về cách thiết kế môi trường, quy chuẩn rules và verification loop cho AI coding agents.",
+      "file": "entries/2026-10-05-learn-harness-engineering-course.md"
     }
   ],
   "tag_tree": {
@@ -60,7 +73,8 @@
       "children": [
         "deployment",
         "monitoring",
-        "ci-cd"
+        "ci-cd",
+        "kubernetes"
       ],
       "description": "Operations & infrastructure"
     },
